@@ -255,6 +255,32 @@ main section h3 {
   width: 10rem;
 }
 
+/*================ A PROPOS =====================*/
+#moi {
+  background-color: #fff1eb;
+  padding: 50px 30px 90px 30px;
+}
+#moi h3 {
+  color: #185d7e;
+}
+#moi article {
+  font-size: 1.2em;
+  text-align: center;
+  padding: 20px;
+}
+#moi article p {
+  margin: 30px;
+}
+#moi a {
+  color: black;
+}
+#moi img {
+  display: block;
+  margin: auto;
+  height: 80px;
+  width: auto;
+}
+
 /*======================= COMPETENCE ==================================*/
 #competence {
   background: #39ac74;
@@ -312,7 +338,8 @@ main section h3 {
 }
 
 @media all and (max-width: 991px) {
-  .case img {
+  .case img,
+  #moi img {
     height: 60px;
   }
 
@@ -326,7 +353,8 @@ main section h3 {
 }
 
 @media all and (max-width: 775px) {
-  .case img {
+  .case img,
+  #moi img {
     height: 40px;
   }
 
@@ -720,7 +748,7 @@ main section h3 {
   background: #cbe4ff;
   margin: auto;
   width: 50%;
-  height: 30rem;
+  height: 35rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -846,6 +874,17 @@ form div {
 }
 .envoyer {
   text-align: center;
+}
+.thank-you {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 22px;
+}
+@media all and (max-width: 760px) {
+  .modalContent {
+    height: 80vh;
+  }
 }
 
 /*================================ FOOTER ====================================*/
@@ -997,7 +1036,7 @@ footer {
 /*============= 575 PX ==================*/
 @media all and (max-width: 575px) {
   main section {
-    padding: 50px 0;
+    padding: 50px 0 !important;
   }
 
   .joli {

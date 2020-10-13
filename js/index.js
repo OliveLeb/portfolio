@@ -138,6 +138,10 @@ window.addEventListener('load', function () {
             $('#contact-form').append(
               "<p class='thank-you'>Votre message a bien été envoyé. Merci de m'avoir contacté ! &#128512;</p>"
             );
+            setTimeout(function () {
+              $('.thank-you').remove();
+            }, 5000);
+
             $('#contact-form')[0].reset();
           } else {
             $('#firstname + .comments').html(result.firstnameError);

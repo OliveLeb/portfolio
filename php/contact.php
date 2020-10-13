@@ -20,7 +20,7 @@
       $array["firstnameError"] = "Entrer votre prenom.";
       $array["isSucces"] = false;
     }
-    else $emailText .= "Prénom : {$array["firstname"]}\n";
+    else $emailText .= "Prenom : {$array["firstname"]}\n";
 
     if(empty($array["name"]))
     {
@@ -41,7 +41,7 @@
       $array["phoneError"] = "Entrer un numéro valide (9 chiffres après le 0 ou +33)";
       $array["isSuccess"] = false;
     }
-    else $emailText .= "Téléphone : {$array["phone"]}\n";
+    else $emailText .= "Telephone : {$array["phone"]}\n";
 
     if(empty($array["message"]))
     {
