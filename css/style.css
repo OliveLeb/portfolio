@@ -266,19 +266,22 @@ main section h3 {
 #moi article {
   font-size: 1.2em;
   text-align: center;
-  padding: 20px;
+  padding: 0 20px;
 }
 #moi article p {
-  margin: 30px;
+  margin-bottom: 30px;
 }
 #moi a {
   color: black;
 }
 #moi img {
-  display: block;
   margin: auto;
   height: 80px;
   width: auto;
+}
+#moi .logo-ecole img:hover {
+  border-radius: 5px;
+  box-shadow: 0 0 3pt 2pt #e92b58;
 }
 
 /*======================= COMPETENCE ==================================*/

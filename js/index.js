@@ -217,6 +217,20 @@ window.addEventListener('load', function () {
       .from('.pp', { opacity: 0, duration: 2.5 }, 0);
   })();
 
+//========================= ABOUT ME
+(function () {
+  const tl = new TimelineLite();
+  const controller = new ScrollMagic.Controller();
+  tl.from('.aboutMe',{ opacity:0, duration:1.5 }, 0);
+  const scene = new ScrollMagic.Scene({
+      triggerElement: '#moi',
+    })
+      .setTween(tl)
+      .addTo(controller);
+
+    scene.reverse(false);
+})();
+
   //===================== FORMATION
   (function () {
     const tl = new TimelineLite();
