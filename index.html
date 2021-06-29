@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-FR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olivier Lebel</title>
+    <meta name="author" content="Olivier Lebel">
+    <meta name="description" content="Développeur web fullstack, à Rouen ou Région parisienne. Je suis disponible pour vous aider à réaliser vos projets.">
+    <meta name="keywords" content="Développeur, Web, HTML, CSS, javascript, php">
 
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
@@ -15,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="https://kit.fontawesome.com/cf458f1f5b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/animation.js" defer></script>
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
@@ -78,14 +82,16 @@
             <h3>à propos</h3>
             <span class="ligne jaune"></span>
             <article class="aboutMe">
-                <p class='explication'>Je suis actuellement à la recherche d'une entreprise d'accueil afin de valider la formation de développeur fullstack
+                <!-- <p class='explication'>Je suis actuellement à la recherche d'une entreprise d'accueil afin de valider la formation de développeur fullstack
                 que j'ai entamé à <a href="https://www.ecole-multimedia.com/fr/nos-formations/formation-en-alternance/informatique-multimedia/developpeureuse-fullstack-backend-1330.html" target="_blank" rel="noopener noreferrer">l'École Multimédia.</a>
-                </p>
-                <div class='logo-ecole'>
+                </p> -->
+                <p>Jeune Développeur Web FullStack, je suis disponible pour la réalisation de vos projets.</p>
+                <p>De la création de sites web au développement d'API en passant par l'optimisation SEO, je mets toutes mes compétences à votre service.</p>
+                <!-- <div class='logo-ecole'>
                     <a href="https://www.ecole-multimedia.com/" target="_blank" rel="noopener noreferrer">
                         <img src="img/logo/lecole-multimedia-logo.png" alt="l'École multimédia">
                     </a>
-                </div>
+                </div> -->
             </article>
         </section>
 
@@ -108,9 +114,9 @@
                         </ul>
                         <ul class="front">
                             <li>Bootstrap</li>
-                            <li>Angular</li>
-                            <li>REACT</li>
-                            <li>REACT native</li>
+                            <li>TailwindCSS</li>
+                            <li>Vue</li>
+                            <li>React</li>
                         </ul>
                     </div>
                 </article>
@@ -122,6 +128,7 @@
                         <li>MySQL</li>
                         <li>Node.js - Express JS</li>
                         <li>Php</li>
+                        <li>Laravel</li>
                     </ul>
                 </article>
                 <div class="separation"></div>
@@ -155,24 +162,24 @@
                     <img src="img/logo/CSS_3.svg" alt="CSS 3">
                 </div>
                 <div class="case flex column">
-                    <img src="img/logo/JavaScript_logo.svg" alt="JAVASCRIPT">
-                    <img src="img/logo/TypeScript.svg" alt="TYPESCRIPT">
+                    <img src="img/logo/JavaScript_logo.svg" alt="Javascript">
+                    <img src="img/logo/TypeScript.svg" alt="TypeScript">
                 </div>
                 <div class="case flex column">
-                    <img src="img/logo/React-icon.svg" alt="REACT">
-                    <img src="img/logo/Angular_logo.svg" alt="ANGULAR">
+                    <img src="img/logo/React-icon.svg" alt="React">
+                    <img src="img/logo/vuejs_Logo.svg" alt="Vue">
                 </div>
                 <div class="case flex column">
-                    <img src="img/logo/MongoDB_Logo.svg" alt="MONGODB">
-                    <img src="img/logo/Git-logo.svg" alt="GIT">
+                    <img src="img/logo/MongoDB_Logo.svg" alt="MongoDB">
+                    <img src="img/logo/Git-logo.svg" alt="Git">
                 </div>
                 <div class="case flex column">
-                    <img src="img/logo/Node.js_logo.svg" alt="NODEJS">
+                    <img src="img/logo/Node.js_logo.svg" alt="NodeJS">
                     <img src="img/logo/PHP_logo.svg" alt="PHP">
                 </div>
                 <div class="case flex column">
-                    <img src="img/logo/Bootstrap_logo.svg" alt="BOOTSTRAP">
-                    <img src="img/logo/Wordpress-Logo.svg" alt="WORDPRESS">
+                    <img src="img/logo/laravel_logo.svg" alt="Laravel">
+                    <img src="img/logo/Wordpress-Logo.svg" alt="Wordpress">
                 </div>
             </div>
         </section>
@@ -182,7 +189,8 @@
                 <h3>Projets</h3>
                 <span class="ligne bleu"></span>
             </div>
-            <div class="flex contenu projet rang">
+
+            <div class="contenu projet">
                 <div class="carte">
                     <div class="toggleCard">
                         <img src="img/logo/GuitarShop.png" class="imgProjet" alt="Site Ecommerce factice">
@@ -296,6 +304,50 @@
                     </div>
                 </div>
 
+                <div class="carte">
+                    <div class="toggleCard">
+                        <img src="img/logo/codeShare.png" alt="Image projet personnel code share" class="imgProjet">
+                    </div>
+                    <div class="carteVerso">
+                        <ul>
+                            <li>Front : Html/css,</li>
+                            <li>vanilla JS, codemirror</li>
+                            <li>Back: NodesJs</li>
+                            <li>Express, socket.io</li>
+                            <li>Hébergé sur Heroku</li>
+                        </ul>
+                        <div style=" display:flex; justify-content:space-around; align-items:center;">
+                            <button>
+                                <a href="https://shareyourcode.herokuapp.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            </button>
+                            <a href="https://github.com/OliveLeb/code-share" target="_blank"
+                                rel="noopener noreferrer"><i class="github fab fa-github-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte">
+                    <div class="toggleCard">
+                        <img src="img/logo/virtualKeyboard.png" alt="Image projet ecole clavier virtuel" class="imgProjet">
+                    </div>
+                    <div class="carteVerso">
+                        <ul>
+                            <li>Front : Html/css,</li>
+                            <li>vanilla JS</li>
+                            <li>Projet d'étude</li>
+                            <li>Avec l'Ecole multimédia</li>
+                            <li>Hébergé sur AlwaysData</li>
+                        </ul>
+                        <div style=" display:flex; justify-content:space-around; align-items:center;">
+                            <button>
+                                <a href="https://olivier-lebel.alwaysdata.net/virtual-keyboard/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            </button>
+                            <a href="https://github.com/OliveLeb/virtual-keyboard" target="_blank"
+                                rel="noopener noreferrer"><i class="github fab fa-github-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
 
         </section>
 
@@ -351,9 +403,8 @@
                 <span class="ligne bleu"></span>
             </div>
 
-            <aside class="work flex column contenu">
-                <div class="flex top">
-                    <div class="contenant flex haut">
+            <div class="work contenu">
+                <div class="contenant flex haut">
                         <div class="contenu-exp">
                             <h4>10.2011 - 07.2012</h4><br>
                             <p>McDonald's France,<br> Equipier polyvalent</p>
@@ -365,20 +416,20 @@
                             <p>Sumécatronic,<br> Opérateur sur commande numérique</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="blanc"></div>
-
-                <div class="bot flex">
-                    <div class="contenant bas flex">
+                <div class="blanc line"></div>
+                    <div class="contenant flex bas">
                         <div class="contenu-exp">
                             <h4>07.2013 - 08.2013</h4><br>
                             <p>AXA Investment Manager,<br> Stage gestion de base de donnée</p>
                         </div>
                     </div>
-                </div>
-
-            </aside>
+                    <div class="contenant flex bas">
+                        <div class="contenu-exp">
+                            <h4>01.2021 - Présent</h4><br>
+                            <p>Memories France,<br> Développeur FullStack</p>
+                        </div>
+                    </div>
+            </div>
         </section>
 
 
@@ -572,8 +623,6 @@
 
     <footer>Créé par Olivier Lebel &copy; - 2020.
     </footer>
-
-
 
 
 </body>

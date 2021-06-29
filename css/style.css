@@ -7,8 +7,17 @@
   font-family: 'Lato', sans-serif;
 }
 
+:root {
+  --section-green: #39ac74;
+  --section-light: #eee;
+}
+/* var(--section-light)*/
+
 body {
-  background: #eee;
+  max-width: 100vw;
+  /* overflow-x: hidden; */
+  background: var(--section-light);
+  cursor: default;
 }
 
 .flex {
@@ -63,7 +72,7 @@ nav {
   width: 100%;
   padding: 10px 0;
   font-size: 1.2em;
-  z-index: 10;
+  z-index: 500;
   color: white;
   align-items: center;
 }
@@ -111,7 +120,7 @@ nav li {
 }
 
 .dlcv a:hover {
-  color: #eee;
+  color: var(--section-light);
   background: #1f7fad;
 }
 
@@ -238,7 +247,7 @@ header h1 {
 /*============================= MAIN ==================================*/
 
 main section {
-  padding: 90px 0;
+  padding: 70px 0 40px;
 }
 
 main section h3 {
@@ -286,7 +295,7 @@ main section h3 {
 
 /*======================= COMPETENCE ==================================*/
 #competence {
-  background: #39ac74;
+  background: var(--section-green);
   color: white;
   padding-bottom: 0px;
 }
@@ -313,7 +322,7 @@ main section h3 {
 .separation {
   display: block;
   width: 2px;
-  height: 150px;
+  height: 165px;
   background: #185d7e;
 }
 
@@ -324,7 +333,7 @@ main section h3 {
 .logo {
   margin-top: 90px;
   height: 100px;
-  background: #eee;
+  background: var(--section-light);
   align-items: flex-start;
   justify-content: space-around;
   overflow: hidden;
@@ -385,13 +394,20 @@ main section h3 {
     height: 60px;
   }
 }
+@media all and (min-width: 992px) {
+  #portfolio .contenu,
+  #exp .contenu {
+    display: grid;
+  }
+}
 /*=========================== PORTFOLIO ====================================*/
 #portfolio {
-  background: #39ac74;
+  background: var(--section-green);
   color: #fff;
 }
 #portfolio .contenu {
-  justify-content: space-around;
+  margin: auto;
+  grid-template-columns: repeat(3, 1fr);
 }
 .carte {
   transition: all 0.5s ease-in-out;
@@ -399,7 +415,8 @@ main section h3 {
   height: auto;
   perspective: 1000px;
   border-radius: 10px;
-  margin: 5px;
+  margin: 20px auto;
+  cursor: pointer;
 }
 .carte img {
   width: 100%;
@@ -409,8 +426,8 @@ main section h3 {
   font-size: 26px;
 }
 @media all and (min-width: 992px) {
-  .zoomIn:hover {
-    transform: scale(1.1, 1.1);
+  .carte:hover {
+    transform: scale(1.1, 1.1) !important;
   }
 }
 @media all and (max-width: 765px) {
@@ -457,7 +474,7 @@ main section h3 {
 }
 /*============================= FORMATION ==================================*/
 #formation {
-  background: #eee;
+  background: var(--section-light);
 }
 
 #formation div {
@@ -530,13 +547,12 @@ main section h3 {
 
 /*================================= EXP PRO ==================================*/
 #exp {
-  background: #39ac74;
+  background: var(--section-green);
   color: white;
 }
 
 .work {
   margin: auto;
-  justify-content: space-between;
   height: auto;
 }
 
@@ -548,39 +564,49 @@ main section h3 {
 
 .contenant {
   position: relative;
-  background: #39ac74;
+  background: var(--section-green);
   color: black;
-  padding: 15px;
   font-size: 1.2em;
+  opacity: 0;
+  z-index: 100;
 }
 
-.top {
-  justify-content: space-around;
-  background: #39ac74;
-  padding-bottom: 15px;
-}
-
-.bot {
-  width: 100%;
-  justify-content: center;
-  background: #39ac74;
+#exp .contenu {
+  grid-template-columns: repeat(6, 1fr);
   padding: 15px;
 }
-
 .contenu-exp {
   background: #fff;
   padding: 10px;
   border-radius: 6px;
   text-align: center;
 }
+.haut:nth-child(1) {
+  grid-column: 2/3;
+}
+.haut:nth-child(2) {
+  grid-column: 4/5;
+}
+.bas:nth-child(4) {
+  grid-column: 3/4;
+}
+.bas:nth-child(5) {
+  grid-column: 5/6;
+}
+#exp .line {
+  grid-column: 1/7;
+  margin: 10px auto;
+  position: relative;
+  left: -1000px;
+}
 
 /* fleches haut puis bas */
-.haut::before {
+.haut .contenu-exp::before {
   content: ' ';
   height: 0;
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 45%;
   margin-left: -7px;
   width: 0;
   z-index: 1;
@@ -589,8 +615,13 @@ main section h3 {
   border-color: white transparent transparent transparent;
   margin-bottom: 5px;
 }
-
-.bas::before {
+.haut .contenu-exp {
+  margin-bottom: 15px;
+}
+.bas .contenu-exp {
+  margin-top: 15px;
+}
+.bas .contenu-exp::before {
   content: ' ';
   height: 0;
   position: absolute;
@@ -606,32 +637,56 @@ main section h3 {
 }
 
 /* The circles on the timeline */
-.bot .contenant::after {
+.bas::after {
   content: '';
   position: absolute;
   width: 20px;
   height: 20px;
   left: 50%;
-  margin-left: -10px;
+  margin-left: -11px;
   background-color: white;
   border: 4px solid #ff9f55;
-  top: -30px;
+  top: -27px;
   border-radius: 50%;
   z-index: 1;
 }
 
-.top .contenant::after {
+.haut::after {
   content: '';
   position: absolute;
   width: 20px;
   height: 20px;
-  left: 50%;
-  margin-left: -10px;
+  left: 45%;
+  margin-left: -11px;
   background-color: white;
   border: 4px solid #ff9f55;
-  bottom: -30px;
+  bottom: -27px;
   border-radius: 50%;
   z-index: 1;
+}
+.contenant.activated {
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.blanc.line.activated {
+  animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes slideIn {
+  from {
+    left: -1000px;
+  }
+  to {
+    left: 0;
+  }
 }
 
 /*================================== DIVERS ==============================*/
@@ -663,7 +718,7 @@ main section h3 {
 
 /*============================== CONTACT ==================================*/
 #contact {
-  background: #39ac74;
+  background: var(--section-green);
   color: #fff;
 }
 
@@ -715,6 +770,7 @@ main section h3 {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #2a7d55;
+  cursor: pointer;
 }
 
 .titre-btn {
@@ -901,6 +957,25 @@ footer {
 
 /*==============================================================================*/
 /*============================ MEDIA QUERY ====================================*/
+/*=============== 1140 PX ===============*/
+@media all and (max-width: 1140px) {
+  #exp .contenu {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+  }
+  .haut:nth-child(1) {
+    grid-column: 1/2;
+  }
+  .haut:nth-child(2) {
+    grid-column: 3/4;
+  }
+  .bas:nth-child(4) {
+    grid-column: 2/3;
+  }
+  .bas:nth-child(5) {
+    grid-column: 4/5;
+  }
+}
 /*========== 992 PX =================*/
 
 @media all and (max-width: 991px) {
@@ -1039,9 +1114,18 @@ footer {
 /*============= 575 PX ==================*/
 @media all and (max-width: 575px) {
   main section {
-    padding: 50px 0 !important;
+    padding: 50px 0;
   }
-
+  main section #competence {
+    padding-bottom: 0;
+  }
+  h3 {
+    font-size: 1.8em !important;
+  }
+  #portfolio .contenu {
+    display: none;
+    grid-template-columns: auto;
+  }
   .joli {
     display: none;
   }
@@ -1099,6 +1183,71 @@ footer {
     left: 10px;
   }
 
+  #exp .contenu {
+    grid-template-columns: 1fr 20px 1fr;
+    position: relative;
+    padding: 30px 0;
+  }
+  .haut:nth-child(1) {
+    grid-column: 3;
+    grid-row: 4;
+  }
+  .haut:nth-child(2) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .bas:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .bas:nth-child(5) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #exp .line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100%;
+  }
+  #exp .line.activated {
+    animation: fadeIn 1s;
+  }
+  .contenant.haut {
+    margin-left: 10px;
+  }
+  .contenant.bas {
+    margin-right: 10px;
+  }
+  .contenu-exp {
+    margin: 0 10px;
+    width: 100%;
+    font-size: 15px;
+  }
+  .haut .contenu-exp::before {
+    left: 2px !important;
+    bottom: 50px !important;
+    transform: rotate(90deg);
+  }
+  .bas .contenu-exp::before {
+    transform: rotate(90deg) !important;
+    left: auto !important;
+    top: 50px !important;
+    right: -5px !important;
+  }
+  .haut::after {
+    left: -34px !important;
+    bottom: 50px !important;
+    margin-left: 0;
+  }
+  .bas::after {
+    left: auto !important;
+    top: 50px !important;
+    right: -34px !important;
+    margin-left: 0;
+  }
+
   .contact {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
@@ -1112,7 +1261,7 @@ footer {
 
   #contact {
     background: #fff;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--section-light);
   }
 
   .contact aside {
@@ -1137,15 +1286,5 @@ footer {
 
   .modalWindow {
     padding-top: 50px;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .contenu {
-    display: -webkit-flex !important;
-    display: -moz-flex !important;
-    display: -ms-flex !important;
-    display: -o-flex !important;
-    display: flex !important;
   }
 }
